@@ -1,0 +1,29 @@
+<RCC>
+  <qresource prefix="fonts">
+    <file>denmark.ttf</file>
+    <file>Feisar.ttf</file>
+    <file>futramc0.ttf</file>
+    <file>FUTURA 0.TTF</file>
+    <file>FUTURA CGJ condensed.ttf</file>
+    <file>FUTURA CGJ light.ttf</file>
+    <file>futura24.ttf</file>
+    <file>Globoface CGJ - light.ttf</file>
+    <file>Globoface CGJ.ttf</file>
+    <file>Globoface-condensed.ttf</file>
+    <file>Globoface-light.ttf</file>
+    <file>Globoface-normal.ttf</file>
+    <file>GlobofaE.ttf</file>
+    <file>Go 2 Old Western.ttf</file>
+    <file>HappyHand.ttf</file>
+    <file>Impregnable_Personal_Use_Only.ttf</file>
+    <file>Penguin Sans 0.500.ttf</file>
+    <file>RAINFALL.otf</file>
+    <file>RemachineScript_PERSONAL_USE_ONLY.ttf</file>
+    <file>SharkSoftBites.ttf</file>
+    <file>soopafre.ttf</file>
+    <file>SouthernAire_Personal_Use_Only.ttf</file>
+    <file>The Sixth Sense.ttf</file>
+    <file>Variada tfb.ttf</file>
+    <file>Ventography_Personal_Use_Only.ttf</file>
+  </qresource>
+</RCC>

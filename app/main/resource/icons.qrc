@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>signal-0-25.png</file>
+    <file>camera.png</file>
+    <file>signal-0.png</file>
+    <file>signal-25-50.png</file>
+    <file>signal-50-75.png</file>
+    <file>signal-75-100.png</file>
+    <file>signal-none.png</file>
+    <file>wifi_big_disabled.png</file>
+    <file>wifi_big.png</file>
+  </qresource>
+</RCC>

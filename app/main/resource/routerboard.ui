@@ -1,0 +1,1257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>578</width>
+    <height>401</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>578</width>
+    <height>401</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>578</width>
+    <height>401</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="font">
+      <font>
+       <family>Globoface</family>
+      </font>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="monitorTab">
+      <attribute name="title">
+       <string>Monitor</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <layout class="QVBoxLayout" name="monitorVLayout">
+         <item>
+          <layout class="QHBoxLayout" name="monitorTopHLayout">
+           <item>
+            <widget class="QGroupBox" name="camGBox01">
+             <property name="font">
+              <font>
+               <pointsize>25</pointsize>
+               <weight>75</weight>
+               <italic>false</italic>
+               <bold>true</bold>
+               <underline>false</underline>
+               <strikeout>false</strikeout>
+              </font>
+             </property>
+             <property name="title">
+              <string>CAM 01</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="flat">
+              <bool>false</bool>
+             </property>
+             <property name="checkable">
+              <bool>false</bool>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_4">
+              <item row="0" column="0">
+               <layout class="QGridLayout" name="camGLayout01">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="camLbl01">
+                  <property name="lineWidth">
+                   <number>0</number>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="icons.qrc">:/icons/camera.png</pixmap>
+                  </property>
+                  <property name="scaledContents">
+                   <bool>false</bool>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <property name="indent">
+                   <number>-1</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLabel" name="signalCamLbl01">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="icons.qrc">:/icons/signal-none.png</pixmap>
+                  </property>
+                  <property name="scaledContents">
+                   <bool>false</bool>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2">
+                 <widget class="QLabel" name="signalValueCamLbl01">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>100 %</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="3" rowspan="2">
+                 <widget class="QLabel" name="connectionRouterLbl01">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="icons.qrc">:/icons/wifi_big_disabled.png</pixmap>
+                  </property>
+                  <property name="scaledContents">
+                   <bool>false</bool>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="gcamLbl01">
+                  <property name="font">
+                   <font>
+                    <pointsize>16</pointsize>
+                    <weight>75</weight>
+                    <italic>false</italic>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>GCAM</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QLabel" name="signalGcamLbl01">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="icons.qrc">:/icons/signal-none.png</pixmap>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="2">
+                 <widget class="QLabel" name="signalValueGcamLbl01">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>100 %</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="camGBox02">
+             <property name="font">
+              <font>
+               <pointsize>25</pointsize>
+               <weight>75</weight>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="title">
+              <string>CAM 02</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_5">
+              <item row="0" column="0">
+               <layout class="QGridLayout" name="camGLayout02">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="camLbl02">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="icons.qrc">:/icons/camera.png</pixmap>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLabel" name="signalCamLbl02">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="icons.qrc">:/icons/signal-none.png</pixmap>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2">
+                 <widget class="QLabel" name="signalValueCamLbl02">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>100 %</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="3" rowspan="2">
+                 <widget class="QLabel" name="connectionRouterLbl02">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="icons.qrc">:/icons/wifi_big_disabled.png</pixmap>
+                  </property>
+                  <property name="scaledContents">
+                   <bool>false</bool>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="gcamLbl02">
+                  <property name="font">
+                   <font>
+                    <pointsize>16</pointsize>
+                    <weight>75</weight>
+                    <italic>false</italic>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>GCAM</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QLabel" name="signalGcamLbl02">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="icons.qrc">:/icons/signal-none.png</pixmap>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="2">
+                 <widget class="QLabel" name="signalValueGcamLbl02">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>100 %</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="monitorButtonHLayout">
+           <item>
+            <widget class="QGroupBox" name="camGBox03">
+             <property name="font">
+              <font>
+               <pointsize>25</pointsize>
+               <weight>75</weight>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="title">
+              <string>CAM 03</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_7">
+              <item row="0" column="0">
+               <layout class="QGridLayout" name="camGLayout03">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="camLbl03">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="icons.qrc">:/icons/camera.png</pixmap>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLabel" name="signalCamLbl03">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="icons.qrc">:/icons/signal-none.png</pixmap>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2">
+                 <widget class="QLabel" name="signalValueCamLbl03">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>100 %</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="3" rowspan="2">
+                 <widget class="QLabel" name="connectionRouterLbl03">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="icons.qrc">:/icons/wifi_big_disabled.png</pixmap>
+                  </property>
+                  <property name="scaledContents">
+                   <bool>false</bool>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="gcamLbl03">
+                  <property name="font">
+                   <font>
+                    <pointsize>16</pointsize>
+                    <weight>75</weight>
+                    <italic>false</italic>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>GCAM</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QLabel" name="signalGcamLbl03">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="icons.qrc">:/icons/signal-none.png</pixmap>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="2">
+                 <widget class="QLabel" name="signalValueGcamLbl03">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>100 %</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="camGBox04">
+             <property name="font">
+              <font>
+               <pointsize>25</pointsize>
+               <weight>75</weight>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="title">
+              <string>CAM 04</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_9">
+              <item row="0" column="0">
+               <layout class="QGridLayout" name="camGLayout04">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="camLbl04">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="icons.qrc">:/icons/camera.png</pixmap>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLabel" name="signalCamLbl04">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="icons.qrc">:/icons/signal-none.png</pixmap>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2">
+                 <widget class="QLabel" name="signalValueCamLbl04">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>100 %</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="3" rowspan="2">
+                 <widget class="QLabel" name="connectionRouterLbl04">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="icons.qrc">:/icons/wifi_big_disabled.png</pixmap>
+                  </property>
+                  <property name="scaledContents">
+                   <bool>false</bool>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="gcamLbl04">
+                  <property name="font">
+                   <font>
+                    <pointsize>16</pointsize>
+                    <weight>75</weight>
+                    <italic>false</italic>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>GCAM</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QLabel" name="signalGcamLbl04">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="icons.qrc">:/icons/signal-none.png</pixmap>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="2">
+                 <widget class="QLabel" name="signalValueGcamLbl04">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>100 %</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="configTab">
+      <attribute name="title">
+       <string>Config</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <item>
+        <layout class="QVBoxLayout" name="configVLayout">
+         <item>
+          <layout class="QHBoxLayout" name="configTopHLayout">
+           <item>
+            <widget class="QGroupBox" name="camConfigGBox01">
+             <property name="font">
+              <font>
+               <pointsize>25</pointsize>
+               <weight>75</weight>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="title">
+              <string>CAM 01</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_2">
+              <item>
+               <layout class="QGridLayout" name="configCamGLayout01">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="ipLbl01">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                    <underline>false</underline>
+                    <kerning>true</kerning>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>IP</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLineEdit" name="ipEdit01">
+                  <property name="font">
+                   <font>
+                    <family>Globoface CGJ  light</family>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>true</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2">
+                 <widget class="QLineEdit" name="portEdit01">
+                  <property name="minimumSize">
+                   <size>
+                    <width>41</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>41</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Globoface CGJ  light</family>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>true</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="inputMethodHints">
+                   <set>Qt::ImhNone</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="usrLbl01">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                    <underline>false</underline>
+                    <kerning>true</kerning>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>User</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1" colspan="2">
+                 <widget class="QLineEdit" name="usrEdit01">
+                  <property name="font">
+                   <font>
+                    <family>Globoface CGJ  light</family>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>true</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="pwdLbl01">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                    <underline>false</underline>
+                    <kerning>true</kerning>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Pass</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1" colspan="2">
+                 <widget class="QLineEdit" name="pwdEdit01">
+                  <property name="font">
+                   <font>
+                    <family>Globoface CGJ  light</family>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>true</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="echoMode">
+                   <enum>QLineEdit::Password</enum>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="camConfigGBox02">
+             <property name="font">
+              <font>
+               <pointsize>25</pointsize>
+               <weight>75</weight>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="title">
+              <string>CAM 02</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_3">
+              <item>
+               <layout class="QGridLayout" name="configCamGLayout02">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="ipLbl02">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                    <underline>false</underline>
+                    <kerning>true</kerning>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>IP</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLineEdit" name="ipEdit02">
+                  <property name="font">
+                   <font>
+                    <family>Globoface CGJ  light</family>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>true</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2">
+                 <widget class="QLineEdit" name="portEdit02">
+                  <property name="minimumSize">
+                   <size>
+                    <width>41</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>41</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Globoface CGJ  light</family>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>true</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="usrLbl02">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                    <underline>false</underline>
+                    <kerning>true</kerning>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>User</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1" colspan="2">
+                 <widget class="QLineEdit" name="usrEdit02">
+                  <property name="font">
+                   <font>
+                    <family>Globoface CGJ  light</family>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>true</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="pwdLbl02">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                    <underline>false</underline>
+                    <kerning>true</kerning>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Pass</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1" colspan="2">
+                 <widget class="QLineEdit" name="pwdEdit02">
+                  <property name="font">
+                   <font>
+                    <family>Globoface CGJ  light</family>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>true</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="echoMode">
+                   <enum>QLineEdit::Password</enum>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="configButtonHLayout">
+           <item>
+            <widget class="QGroupBox" name="camConfigGBox03">
+             <property name="font">
+              <font>
+               <pointsize>25</pointsize>
+               <weight>75</weight>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="title">
+              <string>CAM 03</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_4">
+              <item>
+               <layout class="QGridLayout" name="configCamGLayout03">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="ipLbl03">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                    <underline>false</underline>
+                    <kerning>true</kerning>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>IP</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLineEdit" name="ipEdit03">
+                  <property name="font">
+                   <font>
+                    <family>Globoface CGJ  light</family>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>true</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2">
+                 <widget class="QLineEdit" name="portEdit03">
+                  <property name="minimumSize">
+                   <size>
+                    <width>41</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>41</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Globoface CGJ  light</family>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>true</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="usrLbl03">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                    <underline>false</underline>
+                    <kerning>true</kerning>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>User</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1" colspan="2">
+                 <widget class="QLineEdit" name="usrEdit03">
+                  <property name="font">
+                   <font>
+                    <family>Globoface CGJ  light</family>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>true</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="pwdLbl03">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                    <underline>false</underline>
+                    <kerning>true</kerning>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Pass</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1" colspan="2">
+                 <widget class="QLineEdit" name="pwdEdit03">
+                  <property name="font">
+                   <font>
+                    <family>Globoface CGJ  light</family>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>true</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="echoMode">
+                   <enum>QLineEdit::Password</enum>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="camConfigGBox04">
+             <property name="font">
+              <font>
+               <pointsize>25</pointsize>
+               <weight>75</weight>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="title">
+              <string>CAM 04</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_5">
+              <item>
+               <layout class="QGridLayout" name="configCamGLayout04">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="ipLbl04">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                    <underline>false</underline>
+                    <kerning>true</kerning>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>IP</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLineEdit" name="ipEdit04">
+                  <property name="font">
+                   <font>
+                    <family>Globoface CGJ  light</family>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>true</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2">
+                 <widget class="QLineEdit" name="portEdit04">
+                  <property name="minimumSize">
+                   <size>
+                    <width>41</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>41</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Globoface CGJ  light</family>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>true</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="usrLbl04">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                    <underline>false</underline>
+                    <kerning>true</kerning>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>User</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1" colspan="2">
+                 <widget class="QLineEdit" name="usrEdit04">
+                  <property name="font">
+                   <font>
+                    <family>Globoface CGJ  light</family>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>true</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="pwdLbl04">
+                  <property name="font">
+                   <font>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                    <underline>false</underline>
+                    <kerning>true</kerning>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Pass</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1" colspan="2">
+                 <widget class="QLineEdit" name="pwdEdit04">
+                  <property name="font">
+                   <font>
+                    <family>Globoface CGJ  light</family>
+                    <pointsize>13</pointsize>
+                    <weight>50</weight>
+                    <italic>true</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="echoMode">
+                   <enum>QLineEdit::Password</enum>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="icons.qrc"/>
+  <include location="fonts.qrc"/>
+ </resources>
+ <connections/>
+</ui>
