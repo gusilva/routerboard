@@ -1,11 +1,12 @@
 from PyQt5 import QtWidgets, QtCore, QtGui
 
+
 class RouterGBox(object):
 
     parent = None
     objectname = None
 
-    def __init__(self, obj_name='Group Box', parent=None):
+    def __init__(self, obj_name="Group Box", parent=None):
         self._translate = QtCore.QCoreApplication.translate
         self.parent = parent
         self.objectname = obj_name
