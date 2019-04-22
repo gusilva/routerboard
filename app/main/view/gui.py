@@ -1,7 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from app.main.config import config
 from app.main.service.routerservice import RouterService
-# from app.main.view.routergbox import RouterGBox
 from app.main.view.routertab import RouterTab
 
 
@@ -33,6 +32,8 @@ class MainWidget(object):
         )
 
         self.tabConfig.tabobjects[4].clicked.connect(self.saveConfig)
+
+        self.setWidgetConfigs()
 
         self.horizontalLayout = QtWidgets.QHBoxLayout(Form)
         self.horizontalLayout.addWidget(self.tabWidget)
@@ -84,9 +85,9 @@ class MainWidget(object):
             for idx in range(0, 4):
                 camvalue = "--"
                 gcamvalue = "--"
-                if self.widgetConfigList[idx].camGBox.isChecked():
+                if self.tabConfig.tabobjects[idx].camGBox.isChecked():
                     self.settingsList[idx]["api"].getStock()
-                    self.widgetList[idx].connectionRouterLbl.setPixmap(
+                    self.tabmonitor.tabobjects[idx].connectionRouterLbl.setPixmap(
                         QtGui.QPixmap(":/icons/wifi_big.png")
                     )
                     if (
@@ -97,35 +98,35 @@ class MainWidget(object):
                         if code == 200:
                             camvalue = quality[0]
                             gcamvalue = quality[1]
-                            self.widgetList[idx].connectionRouterLbl.setPixmap(
+                            self.tabmonitor.tabobjects[idx].connectionRouterLbl.setPixmap(
                                 QtGui.QPixmap(":/icons/wifi_big.png")
                             )
-                            self.widgetList[idx].signalCamLbl.setPixmap(
+                            self.tabmonitor.tabobjects[idx].signalCamLbl.setPixmap(
                                 QtGui.QPixmap(self.getSignalIcon(camvalue))
                             )
-                            self.widgetList[idx].signalValueCamLbl.setText(
+                            self.tabmonitor.tabobjects[idx].signalValueCamLbl.setText(
                                 _translate("tabWidget", "{} %".format(camvalue))
                             )
-                            self.widgetList[idx].signalGcamLbl.setPixmap(
+                            self.tabmonitor.tabobjects[idx].signalGcamLbl.setPixmap(
                                 QtGui.QPixmap(self.getSignalIcon(gcamvalue))
                             )
-                            self.widgetList[idx].signalValueGcamLbl.setText(
+                            self.tabmonitor.tabobjects[idx].signalValueGcamLbl.setText(
                                 _translate("tabWidget", "{} %".format(gcamvalue))
                             )
                             continue
-                self.widgetList[idx].connectionRouterLbl.setPixmap(
+                self.tabmonitor.tabobjects[idx].connectionRouterLbl.setPixmap(
                     QtGui.QPixmap(":/icons/wifi_big_disabled.png")
                 )
-                self.widgetList[idx].signalCamLbl.setPixmap(
+                self.tabmonitor.tabobjects[idx].signalCamLbl.setPixmap(
                     QtGui.QPixmap(self.getSignalIcon(camvalue))
                 )
-                self.widgetList[idx].signalValueCamLbl.setText(
+                self.tabmonitor.tabobjects[idx].signalValueCamLbl.setText(
                     _translate("tabWidget", "{} %".format(camvalue))
                 )
-                self.widgetList[idx].signalGcamLbl.setPixmap(
+                self.tabmonitor.tabobjects[idx].signalGcamLbl.setPixmap(
                     QtGui.QPixmap(self.getSignalIcon(gcamvalue))
                 )
-                self.widgetList[idx].signalValueGcamLbl.setText(
+                self.tabmonitor.tabobjects[idx].signalValueGcamLbl.setText(
                     _translate("tabWidget", "{} %".format(gcamvalue))
                 )
         finally:
@@ -151,16 +152,16 @@ class MainWidget(object):
         for idx in range(0, 4):
             settings = {
                 "enabled": False,
-                "ip": self.widgetConfigList[idx].ipEdit.text(),
-                "port": self.widgetConfigList[idx].portEdit.text(),
-                "usr": self.widgetConfigList[idx].usrEdit.text(),
-                "pwd": self.widgetConfigList[idx].pwdEdit.text(),
+                "ip": self.tabConfig.tabobjects[idx].ipEdit.text(),
+                "port": self.tabConfig.tabobjects[idx].portEdit.text(),
+                "usr": self.tabConfig.tabobjects[idx].usrEdit.text(),
+                "pwd": self.tabConfig.tabobjects[idx].pwdEdit.text(),
             }
-            if self.widgetConfigList[idx].camGBox.isChecked():
-                self.widgetList[idx].camGBox.setEnabled(True)
+            if self.tabConfig.tabobjects[idx].camGBox.isChecked():
+                self.tabmonitor.tabobjects[idx].camGBox.setEnabled(True)
                 settings["enabled"] = True
                 config.setValue(
-                    self.widgetConfigList[idx].camGBox.objectName(), settings
+                    self.tabConfig.tabobjects[idx].camGBox.objectName(), settings
                 )
                 self.settingsList[idx]["api"] = RouterService(
                     ip=settings["ip"],
@@ -170,8 +171,8 @@ class MainWidget(object):
                 )
                 self.settingsList[idx]["api"].getStock()
                 continue
-            self.widgetList[idx].camGBox.setEnabled(False)
-            config.setValue(self.widgetConfigList[idx].camGBox.objectName(), settings)
+            self.tabmonitor.tabobjects[idx].camGBox.setEnabled(False)
+            config.setValue(self.tabConfig.tabobjects[idx].camGBox.objectName(), settings)
 
     def saveConfig(self):
         self.setGBoxData()
