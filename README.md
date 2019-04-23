@@ -3,7 +3,6 @@
 ---
 
 | &nbsp;[![license](https://img.shields.io/github/license/ajaymache/travis-ci-with-github.svg)](https://opensource.org/licenses/MIT)&nbsp;&nbsp; |
-|-------|---------|
 
 ---
 
