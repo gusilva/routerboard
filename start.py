@@ -1,7 +1,7 @@
 import sys
 import app.main.resource.icons
 import app.main.resource.fonts
-from app.main.view.gui import MainWidget
+from app.main.view.mainwidget import MainWidget
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import QCoreApplication
 
@@ -19,5 +19,5 @@ tabWidget = QtWidgets.QTabWidget()
 ui = MainWidget()
 ui.setupUi(tabWidget)
 tabWidget.show()
-ui.signal()
+ui.cron()
 sys.exit(app.exec_())
