@@ -33,6 +33,13 @@ pip install -r requirements.txt
 python start.py
 ```
 
+### Build the exe file &nbsp; :construction:
+
+``` 
+pyinstaller -y -F -w -i "app/main/resource/routericon.ico" "start.py"
+```
+
+
 ### Built With
 
 * [PyQt5](https://www.riverbankcomputing.com/software/pyqt/intro) - set of Python v2 and v3 bindings for The Qt Company's Qt application framework.
