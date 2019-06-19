@@ -7,8 +7,7 @@ from app.main.view.routertab import RouterTab
 class MainWidget(object):
     def setupUi(self, Form):
         self._translate = QtCore.QCoreApplication.translate
-        Form.setMinimumSize(QtCore.QSize(578, 401))
-        Form.setMaximumSize(QtCore.QSize(578, 401))
+        Form.resize(QtCore.QSize(578, 401))
         Form.setWindowTitle(self._translate("Form", "RouterBoard Monitor"))
 
         self.tabWidget = QtWidgets.QTabWidget(Form)
@@ -29,7 +28,7 @@ class MainWidget(object):
             self.tabWidget.indexOf(self.tabConfig.tab), self._translate("Form", "Config")
         )
 
-        self.tabConfig.tabobjects[4].clicked.connect(self.saveConfig)
+        self.tabConfig.tabobjects[6].clicked.connect(self.saveConfig)
 
         self.horizontalLayout = QtWidgets.QHBoxLayout(Form)
         self.horizontalLayout.addWidget(self.tabWidget)
@@ -40,7 +39,7 @@ class MainWidget(object):
 
     def setConfigs(self):
         self.settingsList = []
-        for idx in range(1, 5):
+        for idx in range(1, 7):
             default_settings = {"enabled": False, "ip": "", "port": "", "usr": "", "pwd": ""}
             self.tabConfig.tabobjects[idx-1].setLineEdit(
                 ipEdit=config.value(f"gbox_{idx}", default_settings)["ip"],
@@ -59,7 +58,7 @@ class MainWidget(object):
     def cron(self):
         try:
             _translate = QtCore.QCoreApplication.translate
-            for idx in range(0, 4):
+            for idx in range(0, 6):
                 camvalue = "--"
                 gcamvalue = "--"
                 if self.tabConfig.tabobjects[idx].camGBox.isChecked():
@@ -126,7 +125,7 @@ class MainWidget(object):
             return ":/icons/signal-none.png"
 
     def setGBoxData(self):
-        for idx in range(0, 4):
+        for idx in range(0, 6):
             settings = {
                 "enabled": False,
                 "ip": self.tabConfig.tabobjects[idx].ipEdit.text(),

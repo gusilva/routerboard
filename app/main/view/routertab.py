@@ -16,6 +16,8 @@ class RouterTab(object):
         gLayout.addWidget(self.tabobjects[1].camGBox, 0, 1, 1, 1)
         gLayout.addWidget(self.tabobjects[2].camGBox, 1, 0, 1, 1)
         gLayout.addWidget(self.tabobjects[3].camGBox, 1, 1, 1, 1)
+        gLayout.addWidget(self.tabobjects[4].camGBox, 2, 0, 1, 1)
+        gLayout.addWidget(self.tabobjects[5].camGBox, 2, 1, 1, 1)
 
     def configLayout(self):
         gLayout = QtWidgets.QGridLayout(self.tab)
@@ -23,10 +25,12 @@ class RouterTab(object):
         gLayout.addWidget(self.tabobjects[1].camGBox, 0, 1, 1, 1)
         gLayout.addWidget(self.tabobjects[2].camGBox, 1, 0, 1, 1)
         gLayout.addWidget(self.tabobjects[3].camGBox, 1, 1, 1, 1)
-        gLayout.addWidget(self.tabobjects[4], 2, 0, 2, 0, QtCore.Qt.AlignCenter)
+        gLayout.addWidget(self.tabobjects[4].camGBox, 2, 0, 1, 1)
+        gLayout.addWidget(self.tabobjects[5].camGBox, 2, 1, 1, 1)
+        gLayout.addWidget(self.tabobjects[6], 3, 0, 2, 0, QtCore.Qt.AlignCenter)
 
     def monitor(self):
-        for i in range(1, 5):
+        for i in range(1, 7):
             gbox = RouterGBox("gbox_{}".format(i), self.tab)
             gbox.monitor()
             gbox.camGBox.setEnabled(False)
@@ -36,7 +40,7 @@ class RouterTab(object):
         self.retranslateMonitorTab()
 
     def config(self):
-        for i in range(1, 5):
+        for i in range(1, 7):
             cam = "gbox_{}".format(i)
             gbox = RouterGBox(cam, self.tab)
             gbox.config()
@@ -63,6 +67,14 @@ class RouterTab(object):
         self.tabobjects[3].signalValueCamLbl.setText(self._translate("Form", "100 %"))
         self.tabobjects[3].gcamLbl.setText(self._translate("Form", "GCAM"))
         self.tabobjects[3].signalValueGcamLbl.setText(self._translate("Form", "100 %"))
+        self.tabobjects[4].camGBox.setTitle(self._translate("Form", "CAM 05"))
+        self.tabobjects[4].signalValueCamLbl.setText(self._translate("Form", "100 %"))
+        self.tabobjects[4].gcamLbl.setText(self._translate("Form", "GCAM"))
+        self.tabobjects[4].signalValueGcamLbl.setText(self._translate("Form", "100 %"))
+        self.tabobjects[5].camGBox.setTitle(self._translate("Form", "CAM 06"))
+        self.tabobjects[5].signalValueCamLbl.setText(self._translate("Form", "100 %"))
+        self.tabobjects[5].gcamLbl.setText(self._translate("Form", "GCAM"))
+        self.tabobjects[5].signalValueGcamLbl.setText(self._translate("Form", "100 %"))
 
     def retranslateConfigTab(self):
         self.tabobjects[0].camGBox.setTitle(self._translate("Form", "CAM 01"))
@@ -81,5 +93,13 @@ class RouterTab(object):
         self.tabobjects[3].ipLbl.setText(self._translate("Form", "IP"))
         self.tabobjects[3].usrLbl.setText(self._translate("Form", "User"))
         self.tabobjects[3].pwdLbl.setText(self._translate("Form", "Pass"))
-        self.tabobjects[4].setText(self._translate("Form", "Save"))
+        self.tabobjects[4].camGBox.setTitle(self._translate("Form", "CAM 05"))
+        self.tabobjects[4].ipLbl.setText(self._translate("Form", "IP"))
+        self.tabobjects[4].usrLbl.setText(self._translate("Form", "User"))
+        self.tabobjects[4].pwdLbl.setText(self._translate("Form", "Pass"))
+        self.tabobjects[5].camGBox.setTitle(self._translate("Form", "CAM 06"))
+        self.tabobjects[5].ipLbl.setText(self._translate("Form", "IP"))
+        self.tabobjects[5].usrLbl.setText(self._translate("Form", "User"))
+        self.tabobjects[5].pwdLbl.setText(self._translate("Form", "Pass"))
+        self.tabobjects[6].setText(self._translate("Form", "Save"))
 
