@@ -3,6 +3,29 @@ from app.main.config import config
 from app.main.service.routerservice import RouterService
 from app.main.view.routertab import RouterTab
 
+from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot, QThread
+
+class WorkerThread(QObject):
+    workersignal = pyqtSignal(int, int, list)
+
+    def __init__(self):
+        super().__init__()
+
+    def setSettingsList(self, settingsListApi, index):
+        self.idx = index
+        self.settingsListApi = settingsListApi
+        
+
+    @pyqtSlot()
+    def run(self):
+        self.settingsListApi.getStock()
+        code = 0
+        quality = []
+        if (len(self.settingsListApi.stock) > 0 and self.settingsListApi.stock != "Connection Failed"):
+            code, quality = self.settingsListApi.getSignalQuality()
+        self.workersignal.emit("finished", self.idx, code, quality)
+
+
 
 class MainWidget(object):
     def setupUi(self, Form):
@@ -62,51 +85,89 @@ class MainWidget(object):
                 camvalue = "--"
                 gcamvalue = "--"
                 if self.tabConfig.tabobjects[idx].camGBox.isChecked():
-                    self.settingsList[idx]["api"].getStock()
-                    self.tabmonitor.tabobjects[idx].connectionRouterLbl.setPixmap(
-                        QtGui.QPixmap(":/icons/wifi_big.png")
-                    )
-                    if (
-                        len(self.settingsList[idx]["api"].stock) > 0
-                        and self.settingsList[idx]["api"].stock != "Connection Failed"
-                    ):
-                        code, quality = self.settingsList[idx]["api"].getSignalQuality()
-                        if code == 200:
-                            camvalue = quality[0]
-                            gcamvalue = quality[1]
-                            self.tabmonitor.tabobjects[idx].connectionRouterLbl.setPixmap(
-                                QtGui.QPixmap(":/icons/wifi_big.png")
-                            )
-                            self.tabmonitor.tabobjects[idx].signalCamLbl.setPixmap(
-                                QtGui.QPixmap(self.getSignalIcon(camvalue))
-                            )
-                            self.tabmonitor.tabobjects[idx].signalValueCamLbl.setText(
-                                _translate("tabWidget", "{} %".format(camvalue))
-                            )
-                            self.tabmonitor.tabobjects[idx].signalGcamLbl.setPixmap(
-                                QtGui.QPixmap(self.getSignalIcon(gcamvalue))
-                            )
-                            self.tabmonitor.tabobjects[idx].signalValueGcamLbl.setText(
-                                _translate("tabWidget", "{} %".format(gcamvalue))
-                            )
-                            continue
-                self.tabmonitor.tabobjects[idx].connectionRouterLbl.setPixmap(
-                    QtGui.QPixmap(":/icons/wifi_big_disabled.png")
-                )
-                self.tabmonitor.tabobjects[idx].signalCamLbl.setPixmap(
-                    QtGui.QPixmap(self.getSignalIcon(camvalue))
-                )
-                self.tabmonitor.tabobjects[idx].signalValueCamLbl.setText(
-                    _translate("tabWidget", "{} %".format(camvalue))
-                )
-                self.tabmonitor.tabobjects[idx].signalGcamLbl.setPixmap(
-                    QtGui.QPixmap(self.getSignalIcon(gcamvalue))
-                )
-                self.tabmonitor.tabobjects[idx].signalValueGcamLbl.setText(
-                    _translate("tabWidget", "{} %".format(gcamvalue))
-                )
+                    self.tabmonitor.tabobjects[idx].connectionRouterLbl.setPixmap(QtGui.QPixmap(":/icons/wifi_big.png"))
+                    self.worker = WorkerThread()
+                    self.worker.setSettingsList(self.settingsList[idx]["api"], idx)
+                    self.thread = QThread()
+                    self.thread.started.connect(self.worker.run)
+                    self.thread.finished.connect(self.onFinished)
+                    self.worker.workersignal.connect(self.onWorkerSignal)
+                    self.worker.moveToThread(self.thread)
+                    self.thread.start()
+                # if self.tabConfig.tabobjects[idx].camGBox.isChecked():
+                #     self.settingsList[idx]["api"].getStock()
+                #     self.tabmonitor.tabobjects[idx].connectionRouterLbl.setPixmap(
+                #         QtGui.QPixmap(":/icons/wifi_big.png")
+                #     )
+                #     if (
+                #         len(self.settingsList[idx]["api"].stock) > 0
+                #         and self.settingsList[idx]["api"].stock != "Connection Failed"
+                #     ):
+                #         code, quality = self.settingsList[idx]["api"].getSignalQuality()
+                #         if code == 200:
+                #             camvalue = quality[0]
+                #             gcamvalue = quality[1]
+                #             self.tabmonitor.tabobjects[idx].connectionRouterLbl.setPixmap(
+                #                 QtGui.QPixmap(":/icons/wifi_big.png")
+                #             )
+                #             self.tabmonitor.tabobjects[idx].signalCamLbl.setPixmap(
+                #                 QtGui.QPixmap(self.getSignalIcon(camvalue))
+                #             )
+                #             self.tabmonitor.tabobjects[idx].signalValueCamLbl.setText(
+                #                 _translate("tabWidget", "{} %".format(camvalue))
+                #             )
+                #             self.tabmonitor.tabobjects[idx].signalGcamLbl.setPixmap(
+                #                 QtGui.QPixmap(self.getSignalIcon(gcamvalue))
+                #             )
+                #             self.tabmonitor.tabobjects[idx].signalValueGcamLbl.setText(
+                #                 _translate("tabWidget", "{} %".format(gcamvalue))
+                #             )
+                #             continue
+                # self.tabmonitor.tabobjects[idx].connectionRouterLbl.setPixmap(
+                #     QtGui.QPixmap(":/icons/wifi_big_disabled.png")
+                # )
+                # self.tabmonitor.tabobjects[idx].signalCamLbl.setPixmap(
+                #     QtGui.QPixmap(self.getSignalIcon(camvalue))
+                # )
+                # self.tabmonitor.tabobjects[idx].signalValueCamLbl.setText(
+                #     _translate("tabWidget", "{} %".format(camvalue))
+                # )
+                # self.tabmonitor.tabobjects[idx].signalGcamLbl.setPixmap(
+                #     QtGui.QPixmap(self.getSignalIcon(gcamvalue))
+                # )
+                # self.tabmonitor.tabobjects[idx].signalValueGcamLbl.setText(
+                #     _translate("tabWidget", "{} %".format(gcamvalue))
+                # )
         finally:
-            QtCore.QTimer.singleShot(5000, self.cron)
+            pass
+            # QtCore.QTimer.singleShot(5000, self.cron)
+
+
+    def onFinished(self):
+        print("thread finished")
+        QtCore.QTimer.singleShot(5000, self.cron)
+        self.threadsignal.emit("finished")
+
+
+    def onWorkerSignal(self, idx, code, quality):
+        camvalue = "--"
+        gcamvalue = "--"
+        if code == 200:
+            camvalue = quality[0]
+            gcamvalue = quality[1]
+            self.tabmonitor.tabobjects[idx].connectionRouterLbl.setPixmap(QtGui.QPixmap(":/icons/wifi_big.png"))
+            self.tabmonitor.tabobjects[idx].signalCamLbl.setPixmap(QtGui.QPixmap(self.getSignalIcon(camvalue)))
+            self.tabmonitor.tabobjects[idx].signalValueCamLbl.setText(_translate("tabWidget", "{} %".format(camvalue)))
+            self.tabmonitor.tabobjects[idx].signalGcamLbl.setPixmap(QtGui.QPixmap(self.getSignalIcon(gcamvalue)))
+            self.tabmonitor.tabobjects[idx].signalValueGcamLbl.setText(_translate("tabWidget", "{} %".format(gcamvalue)))
+        else:
+            self.tabmonitor.tabobjects[idx].connectionRouterLbl.setPixmap(QtGui.QPixmap(":/icons/wifi_big_disabled.png"))
+            self.tabmonitor.tabobjects[idx].signalCamLbl.setPixmap(QtGui.QPixmap(self.getSignalIcon(camvalue)))
+            self.tabmonitor.tabobjects[idx].signalValueCamLbl.setText(_translate("tabWidget", "{} %".format(camvalue)))
+            self.tabmonitor.tabobjects[idx].signalGcamLbl.setPixmap(QtGui.QPixmap(self.getSignalIcon(gcamvalue)))
+            self.tabmonitor.tabobjects[idx].signalValueGcamLbl.setText(_translate("tabWidget", "{} %".format(gcamvalue)))       
+        self.thread.terminate()
+
 
     def getSignalIcon(self, value):
         if isinstance(value, str):
