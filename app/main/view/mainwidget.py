@@ -28,6 +28,7 @@ class WorkerThread(QObject):
 
 class MainWidget(object):
     def setupUi(self, Form):
+        print("Monitoring has started.")
         self.worker = [None]*6
         self.thread = [None]*6
         self._translate = QtCore.QCoreApplication.translate
@@ -94,6 +95,8 @@ class MainWidget(object):
             for idx in range(0, 6):
                 camvalue = "--"
                 gcamvalue = "--"
+                if self.thread[idx] is not None:
+                    self.thread[idx].terminate()
                 if self.tabConfig.tabobjects[idx].camGBox.isChecked():
                     self.worker[idx] = WorkerThread()
                     self.thread[idx] = QThread()
@@ -109,6 +112,7 @@ class MainWidget(object):
 
     def onFinished(self):
         print("thread finished")
+        print(self.thread)
 
     def onWorkerSignal(self, idx, code, quality):
         camvalue = "--"
@@ -126,8 +130,10 @@ class MainWidget(object):
             self.tabmonitor.tabobjects[idx].signalCamLbl.setPixmap(QtGui.QPixmap(self.getSignalIcon(camvalue)))
             self.tabmonitor.tabobjects[idx].signalValueCamLbl.setText(self._translate("tabWidget", "{} %".format(camvalue)))
             self.tabmonitor.tabobjects[idx].signalGcamLbl.setPixmap(QtGui.QPixmap(self.getSignalIcon(gcamvalue)))
-            self.tabmonitor.tabobjects[idx].signalValueGcamLbl.setText(self._translate("tabWidget", "{} %".format(gcamvalue)))       
-        self.thread[idx].terminate()
+            self.tabmonitor.tabobjects[idx].signalValueGcamLbl.setText(self._translate("tabWidget", "{} %".format(gcamvalue)))
+        if self.thread[idx].isRunning():
+            print("Thread "+str(idx)+" has been finished: "+self.tabmonitor.tabobjects[idx].objectname)  
+            self.thread[idx].terminate()
 
 
     def getSignalIcon(self, value):
