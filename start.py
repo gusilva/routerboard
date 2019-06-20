@@ -4,10 +4,11 @@ import app.main.resource.fonts
 from app.main.view.mainwidget import MainWidget
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import QCoreApplication
-import ctypes
 
-appid = 'tvglobo.sdrmonitor.ver1'
-ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(appid)
+if sys.platform.startswith("win"):
+    import ctypes
+    appid = 'tvglobo.sdrmonitor.ver1'
+    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(appid)
 
 ORGANIZATION_NAME = "Globo"
 ORGANIZATION_DOMAIN = "tvglobo.com.br"
