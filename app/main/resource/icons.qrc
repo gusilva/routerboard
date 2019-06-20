@@ -9,5 +9,11 @@
     <file>signal-none.png</file>
     <file>wifi_big_disabled.png</file>
     <file>wifi_big.png</file>
+    <file>wifi16x16.ico</file>
+    <file>wifi24x24.ico</file>
+    <file>wifi32x32.ico</file>
+    <file>wifi64x64.ico</file>
+    <file>wifi128x128.ico</file>
+    <file>wifi256x256.ico</file>
   </qresource>
 </RCC>
